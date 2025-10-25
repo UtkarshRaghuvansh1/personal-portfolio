@@ -1,12 +1,10 @@
 import "./App.css";
-import Profile from "./PortfolioContainers/Home/Profile";
-import Footer from "./PortfolioContainers/Home/Footer/Footer";
+import Home from "../src/PortfolioContainers/Home/Home";
 
 function App() {
   return (
     <>
-      <Profile />
-      <Footer />
+      <Home />
     </>
   );
 }

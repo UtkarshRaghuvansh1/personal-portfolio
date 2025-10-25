@@ -1,8 +1,13 @@
 import { useState } from "react";
 import "./App.css";
+import Profile from "./PortfolioContainers/Home/Profile";
 
 function App() {
-  return <>Personal Portfolio</>;
+  return (
+    <>
+      <Profile />
+    </>
+  );
 }
 
 export default App;

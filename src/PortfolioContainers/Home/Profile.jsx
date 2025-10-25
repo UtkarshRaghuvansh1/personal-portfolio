@@ -1,7 +1,10 @@
 import "./Profile.css";
 import { TypeAnimation } from "react-type-animation";
 import Resume from "../../assets/Utkasrh_Resume_latest.pdf";
-function Profile() {
+import React from "react";
+// import ScrollService from "../../../utilities/ScrollService";
+
+export default function Profile() {
   return (
     <div className="profile-container">
       <div className="profile-parent">
@@ -30,8 +33,8 @@ function Profile() {
           </div>
           <div className="profile-details-name">
             <span className="primary-text">
-              Hello I'm
-              <span className="highlighted-text"> Utkarsh</span>
+              {" "}
+              Hello, I'M <span className="highlighted-text">Utkarsh</span>
             </span>
           </div>
           <div className="profile-details-role">
@@ -56,14 +59,19 @@ function Profile() {
                   repeat={Infinity}
                 />
               </h1>
-              <span className="profile-role-tagline">
-                Crafting modern web apps with performance & precision
-              </span>
+            </span>
+            <span className="profile-role-tagline">
+              Crafting modern web apps with performance & precision
             </span>
           </div>
+
           <div className="profile-options">
-            <button className="btn btn-primary">
-              {""}Hire me {""}
+            <button
+              className="btn primary-btn"
+              //   onClick={() => ScrollService.scrollHandler.scrollToHireMe()}
+            >
+              {" "}
+              Hire Me{" "}
             </button>
             <a href={Resume} download="UtkarshResume.pdf">
               <button className="btn highlighted-btn">Get Resume</button>
@@ -77,5 +85,3 @@ function Profile() {
     </div>
   );
 }
-
-export default Profile;

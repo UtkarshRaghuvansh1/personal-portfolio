@@ -1,10 +1,10 @@
 import "./App.css";
-import Home from "../src/PortfolioContainers/Home/Home";
+import PortfolioContainer from "./PortfolioContainers/PortfolioContainer";
 
 function App() {
   return (
     <>
-      <Home />
+      <PortfolioContainer />
     </>
   );
 }

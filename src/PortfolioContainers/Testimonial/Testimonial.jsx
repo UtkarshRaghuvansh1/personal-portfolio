@@ -1,15 +1,26 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./Testimonial.css";
-import lady from "../../assets/Testimonial/lady.png";
-import mike from "../../assets/Testimonial/mike.png";
-import man from "../../assets/Testimonial/man.png";
+import parth from "../../assets/Testimonial/Parth.png";
+import anbalagan from "../../assets/Testimonial/Anbalagan.png";
+import priyansh from "../../assets/Testimonial/Priyansh.png";
+import harsh from "../../assets/Testimonial/Harsh.png";
+import mayank from "../../assets/Testimonial/Mayank.png";
 import shape from "../../assets/Testimonial/shape-bg.png";
 import ScreenHeading from "../../utilities/ScreenHeading/ScreenHeading";
+import ScrollService from "../../utilities/ScrollService";
+import Animations from "../../utilities/Animations";
 
-export default function Testimonial() {
+export default function Testimonial(props) {
+  let fadeInScreenHandler = (screen) => {
+    if (screen.fadeInScreen !== props.id) return;
+    Animations.animations.fadeInScreen(props.id);
+  };
+  const fadeInSubscription =
+    ScrollService.currentScreenFadeIn.subscribe(fadeInScreenHandler);
+
   const settings = {
     dots: true,
     infinite: true,
@@ -23,36 +34,48 @@ export default function Testimonial() {
       { breakpoint: 768, settings: { slidesToShow: 1 } },
     ],
   };
-
   const testimonials = [
     {
-      img: lady,
-      name: "Daisy Dominic",
-      role: "CEO InansGlobal",
-      text: "I patronized Ehizeex and when He delivered, I honestly fell in love with the project. Very honest and punctual.",
+      img: parth,
+      name: "Parth Maheshwari",
+      role: "SDE at Amazon",
+      text: "Utkarsh is a highly dependable engineer. His attention to detail made our collaboration smooth and efficient.",
     },
     {
-      img: mike,
-      name: "Mikel",
-      role: "CEO MikeTech",
-      text: "It was nice hiring this guy for my e-commerce project. He delivered even more than I imagined!",
+      img: priyansh,
+      name: "Priyansh Pandey",
+      role: "SDE at BharatPe",
+      text: "Working with Utkarsh was a great experience. He’s quick to grasp requirements and delivers quality results.",
     },
     {
-      img: man,
-      name: "John Smith",
-      role: "Banker",
-      text: "He implemented every functionality I requested for. Thank you!",
+      img: mayank,
+      name: "Mayank Jain",
+      role: "SDE at GE Healthcare",
+      text: "Utkarsh consistently exceeds expectations. His problem-solving skills are impressive and practical.",
     },
     {
-      img: man,
-      name: "John Smith",
-      role: "Banker",
-      text: "He implemented every functionality I requested for. Thank you!",
+      img: harsh,
+      name: "Harsh Verma",
+      role: "SDE at BNY",
+      text: "He brings clarity to complex problems and always ensures timely delivery. Truly a great team player.",
+    },
+    {
+      img: anbalagan,
+      name: "Anbalagan Tamilarasan",
+      role: "Director at FICO",
+      text: "Utkarsh demonstrated strong ownership and innovation in every project. A valuable contributor to the team.",
     },
   ];
 
+  useEffect(() => {
+    return () => {
+      /* UNSUBSCRIBE THE SUBSCRIPTIONS */
+      fadeInSubscription.unsubscribe();
+    };
+  }, [fadeInSubscription]);
+
   return (
-    <div>
+    <div id={props.id}>
       <ScreenHeading
         title={"Testimonial"}
         subHeading={"What My Client Say About Me"}

@@ -2,7 +2,7 @@ import "./Profile.css";
 import { TypeAnimation } from "react-type-animation";
 import Resume from "../../../assets/Utkasrh_Resume_latest.pdf";
 import React from "react";
-// import ScrollService from "../../../utilities/ScrollService";
+import ScrollService from "../../../utilities/ScrollService";
 
 export default function Profile() {
   return (
@@ -68,7 +68,7 @@ export default function Profile() {
           <div className="profile-options">
             <button
               className="btn primary-btn"
-              //   onClick={() => ScrollService.scrollHandler.scrollToHireMe()}
+              onClick={() => ScrollService.scrollHandler.scrollToHireMe()}
             >
               {" "}
               Hire Me{" "}

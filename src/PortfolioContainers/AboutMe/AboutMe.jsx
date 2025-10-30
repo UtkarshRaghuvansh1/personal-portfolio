@@ -2,6 +2,7 @@ import React from "react";
 import ScreenHeading from "../../utilities/ScreenHeading/ScreenHeading";
 import ScrollService from "../../utilities/ScrollService";
 import Animations from "../../utilities/Animations";
+import Resume from "../../../assets/Utkasrh_Resume.pdf";
 import "./AboutMe.css";
 
 export default function AboutMe(props) {
@@ -63,7 +64,7 @@ export default function AboutMe(props) {
                 {" "}
                 Hire Me{" "}
               </button>
-              <a href="ehizcv.pdf" download="Utkarsh_Resume.pdf">
+              <a href={Resume} download="Utkarsh_Resume.pdf">
                 <button className="btn highlighted-btn">Get Resume</button>
               </a>
             </div>

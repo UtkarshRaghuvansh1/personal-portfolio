@@ -1,6 +1,6 @@
 import "./Profile.css";
 import { TypeAnimation } from "react-type-animation";
-import Resume from "../../../assets/Utkasrh_Resume_latest.pdf";
+import Resume from "../../../assets/Utkasrh_Resume.pdf";
 import React from "react";
 import ScrollService from "../../../utilities/ScrollService";
 

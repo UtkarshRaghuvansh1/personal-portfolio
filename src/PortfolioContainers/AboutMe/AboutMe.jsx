@@ -2,7 +2,7 @@ import React from "react";
 import ScreenHeading from "../../utilities/ScreenHeading/ScreenHeading";
 import ScrollService from "../../utilities/ScrollService";
 import Animations from "../../utilities/Animations";
-import Resume from "../../../assets/Utkasrh_Resume.pdf";
+import Resume from "../../assets/Utkasrh_Resume.pdf";
 import "./AboutMe.css";
 
 export default function AboutMe(props) {

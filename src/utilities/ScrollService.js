@@ -35,7 +35,8 @@ export default class ScrollService {
    * ✅ Utility to scroll smoothly to "Contact Me" section
    */
   scrollToHireMe = () => {
-    let contactMeScreen = document.getElementById("ContactMe");
+    console.log("Hire button cliked!");
+    let contactMeScreen = document.getElementById("Contact Me");
     if (!contactMeScreen) return;
     contactMeScreen.scrollIntoView({ behavior: "smooth" });
   };
